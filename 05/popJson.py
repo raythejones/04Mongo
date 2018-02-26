@@ -6,7 +6,7 @@ db = connection['usStats']
 collection = db['usStatsCollection']
 
 
-
+"""
 
 file = open("populationUSA.json","r")
 data = file.read()
@@ -38,4 +38,30 @@ for index in data:
 
 
 #collection.insert_one(data)
+"""
 
+
+def byMales(theMales):
+	bData = collection.find({'males':theMales})
+	for theObject in bData:
+		print theObject['age']
+        return bData
+		
+print byMales("1121000")
+
+def byFemales(theFemales):
+        bData = collection.find({'females':theFemales})
+        for theObject in bData:
+            print theObject['age']
+        return bData
+
+print byFemales("1119000")
+
+def byMalesAndFemales(theMales,theFemales):
+	bData = collection.find({'males':theMales,'females':theFemales})
+        for theObject in bData:
+            print theObject['age']
+        return bData
+		
+print byMalesAndFemales("1158000","1147000")
+print byMalesAndFemales('0','0')
