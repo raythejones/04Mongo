@@ -1,3 +1,12 @@
+"""
+Dataset Name: 1950 US population
+Link: http://api.population.io/1.0/population/1950/United%20States/?format=json
+Summary of import mechanism:
+Get rid of beginning and ending brackets, then split along },{ for constructing dictionary entries
+
+"""
+
+
 import pymongo
 import json
 
