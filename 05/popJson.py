@@ -6,7 +6,6 @@ db = connection['usStats']
 collection = db['usStatsCollection']
 
 
-"""
 
 file = open("populationUSA.json","r")
 data = file.read()
@@ -38,7 +37,7 @@ for index in data:
 
 
 #collection.insert_one(data)
-"""
+
 
 
 def byMales(theMales):
